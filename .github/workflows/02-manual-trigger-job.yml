@@ -15,5 +15,6 @@ jobs:
       uses: azure/login@v1
       with:
         creds: ${{secrets.AZURE_CREDENTIALS}}
-
+    - name: Azure Job
+      run: az ml job create --file job.yml --resource-group rg-dp100-labs --workspace-name mlw-dp100-labs
 
