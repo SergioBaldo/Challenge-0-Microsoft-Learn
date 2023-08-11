@@ -5,7 +5,6 @@ on:
 
 jobs: 
   print:
-    steps:
     - name: Placeholder
       runs-on: |
         echo "Will add code checks here in next challenge"
