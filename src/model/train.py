@@ -43,7 +43,7 @@ def split_data(df):
     y = df["Diabetic"].values
 
     X_train, X_test, y_train, y_test = train_test_split(
-        X, y, test_size=0.20, random_state=0
+        X, y, test_size=0.30, random_state=0
     )
 
     return X_train, X_test, y_train, y_test
@@ -60,7 +60,7 @@ def parse_args():
 
     # add arguments
     parser.add_argument("--training_data", dest="training_data", type=str)
-    parser.add_argument("--reg_rate", dest="reg_rate", type=float, default=0.01)
+    parser.add_argument("--reg_rate", dest="reg_rate", type=float, default=0.02)
 
     # parse args
     args = parser.parse_args()
