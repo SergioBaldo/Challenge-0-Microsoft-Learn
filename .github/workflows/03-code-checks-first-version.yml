@@ -1,0 +1,9 @@
+name: Code checks First Version
+
+on:
+  pull_request:
+
+jobs: 
+  - name: Placeholder
+    run: |
+      echo "Will add code checks here in next challenge"
