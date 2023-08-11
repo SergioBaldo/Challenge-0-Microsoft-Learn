@@ -4,6 +4,7 @@ on:
   pull_request:
 
 jobs: 
-  - name: Placeholder
-    runs-on: |
-      echo "Will add code checks here in next challenge"
+  print:
+    - name: Placeholder
+      runs-on: |
+        echo "Will add code checks here in next challenge"
