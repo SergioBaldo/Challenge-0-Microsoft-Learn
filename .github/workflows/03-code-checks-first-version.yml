@@ -3,6 +3,9 @@ name: Code checks First Version
 on:
   pull_request:
 
-- name: Placeholder
-  run: |
-    echo "Will add code checks here in next challenge"
+jobs: 
+  print:
+    steps:
+    - name: Placeholder
+      run: |
+        echo "Will add code checks here in next challenge"
