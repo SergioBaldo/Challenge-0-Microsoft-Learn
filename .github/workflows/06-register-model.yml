@@ -1,0 +1,21 @@
+name: Deploy Latest Model
+
+on:
+  pull_request:
+
+jobs:
+  deploy_model:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Check out repo
+      uses: actions/checkout@main
+    - name: Install az ml extension
+      run: az extension add -n ml -y
+    - name: Azure login
+      uses: azure/login@v1
+      with:
+        creds: ${{secrets.AZURE_CREDENTIALS}}
+    - name: Online Endpoint Create
+      run: az ml online-endpoint create --name diabetes-mlflow -f ./mslearn-aml-cli/Allfiles/Labs/05/mlflow-endpoint/create-endpoint.yml
+    - name: Deploy Model
+      run: az ml online-deployment create --name my-model --endpoint diabetes-mlflow -f ./mslearn-aml-cli/Allfiles/Labs/05/mlflow-endpoint/mlflow-deployment.yaml --all-traffic
