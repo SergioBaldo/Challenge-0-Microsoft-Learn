@@ -8,6 +8,7 @@ on:
 jobs:
   experiment_job:
     runs-on: ubuntu-latest
+    environment: development
     steps:
     - name: Check out repo
       uses: actions/checkout@main
@@ -23,6 +24,7 @@ jobs:
   production_job:
     needs: experiment_job
     runs-on: ubuntu-latest
+    environment: production
     steps:
     - name: Check out repo
       uses: actions/checkout@main
