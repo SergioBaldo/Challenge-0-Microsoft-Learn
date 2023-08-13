@@ -16,7 +16,7 @@ jobs:
     - name: Azure login
       uses: azure/login@v1
       with:
-        creds: ${{secrets.AZURE_CREDENTIALS_PRODUCTION_EXPERIMENT}}
+        creds: ${{secrets.AZURE_CREDENTIALS_EXPERIMENT}}
     - name: Trigger the Experiment Azure Machine Learning Job
       run: az ml job submit --file src/experiment_job.yml --resource-group rg-dp100-labs --workspace-name mlw-dp100-labs
 
