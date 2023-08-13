@@ -17,7 +17,7 @@ jobs:
       uses: azure/login@v1
       with:
         creds: ${{secrets.AZURE_CREDENTIALS_PRODUCTION_EXPERIMENT}}
-    - name: Trigger the experiment Azure Machine Learning Job
+    - name: Trigger the Experiment Azure Machine Learning Job
       run: az ml job submit --file src/experiment_job.yml --resource-group rg-dp100-labs --workspace-name mlw-dp100-labs
 
   production_job:
@@ -32,7 +32,7 @@ jobs:
       uses: azure/login@v1
       with:
         creds: ${{secrets.AZURE_CREDENTIALS_PRODUCTION}}
-    - name: Trigger the production Azure Machine Learning Job
+    - name: Trigger the Production Azure Machine Learning Job
       run: az ml job submit --file src/production_job.yml --resource-group rg-dp100-labs --workspace-name mlw-dp100-labs --stream
 
 
